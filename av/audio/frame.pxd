@@ -26,3 +26,7 @@ cdef class AudioFrame(Frame):
 
     cpdef resample(self, bytes channel_layout, bytes sample_fmt, int sample_rate)
     
+    # PEP 3118 buffer protocol.
+    cdef Py_ssize_t _buffer_shape[3]
+    cdef Py_ssize_t _buffer_strides[3]
+    cdef Py_ssize_t _buffer_suboffsets[3]

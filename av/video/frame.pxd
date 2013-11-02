@@ -11,6 +11,8 @@ cdef class VideoFrame(Frame):
     # This is the buffer that is used to back everything in the AVPicture.
     # We don't ever actually access it directly.
     cdef uint8_t *_buffer
+
+    # This does is the size of a frame, not the buffer above.
     cdef readonly int buffer_size
 
     cdef readonly int frame_index
